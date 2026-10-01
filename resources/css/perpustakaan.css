@@ -1,0 +1,429 @@
+/* =========================================
+   DEEP SPACE - PERPUSTAKAAN
+   ========================================= */
+
+:root {
+    --navy: #0A2353;
+    --blue-dark: #112C70;
+    --blue: #5B58EB;
+    --purple: #BB63FF;
+    --cyan: #56E1E9;
+    --white: #ffffff;
+}
+
+/* ==============================
+   NAVBAR
+   ============================== */
+
+.deep-navbar {
+    position: relative;
+    width: 100%;
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(91, 88, 235, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(86, 225, 233, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #0A2353,
+            #112C70,
+            #21145f
+        );
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.3);
+
+    z-index: 1000;
+}
+
+/* Grid halus pada navbar */
+
+.deep-navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 35px 35px;
+
+    opacity: 0.25;
+
+    pointer-events: none;
+}
+
+/* Container */
+
+.nav-container {
+    position: relative;
+
+    width: min(1400px, 94%);
+    min-height: 78px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+/* ==============================
+   BRAND
+   ============================== */
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: white;
+    text-decoration: none;
+
+    min-width: 240px;
+}
+
+/* Icon */
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-size: 23px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--purple)
+        );
+
+    box-shadow:
+        0 0 20px rgba(187, 99, 255, 0.45);
+
+    color: white;
+}
+
+/* Nama aplikasi */
+
+.brand-title {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+/* Subjudul */
+
+.brand-subtitle {
+    margin-top: 3px;
+
+    font-size: 8px;
+    letter-spacing: 1px;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==============================
+   MENU
+   ============================== */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+
+    gap: 5px;
+
+    flex: 1;
+}
+
+/* Link */
+
+.nav-link {
+    position: relative;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+/* Hover */
+
+.nav-link:hover {
+    color: white;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* Active */
+
+.nav-link.active {
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(91, 88, 235, 0.8),
+            rgba(187, 99, 255, 0.7)
+        );
+
+    box-shadow:
+        0 5px 20px rgba(91, 88, 235, 0.3);
+}
+
+/* Garis cyan bawah */
+
+.nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 20%;
+    right: 20%;
+    bottom: 3px;
+
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 8px var(--cyan);
+}
+
+/* ==============================
+   USER
+   ============================== */
+
+.nav-user {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+}
+
+/* Nama & email */
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 700;
+
+    color: white;
+}
+
+.user-email {
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ==============================
+   LOGOUT
+   ============================== */
+
+.logout-button {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    padding: 9px 15px;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.logout-button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
+
+    border-color: transparent;
+
+    box-shadow:
+        0 0 18px rgba(187, 99, 255, 0.4);
+
+    transform: translateY(-1px);
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 1000px) {
+
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 15px 0;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .nav-user {
+        margin-left: auto;
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .nav-brand {
+        min-width: auto;
+    }
+
+    .brand-subtitle,
+    .user-info {
+        display: none;
+    }
+
+    .nav-menu {
+        overflow-x: auto;
+        justify-content: flex-start;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+}
+
+/* ==============================
+   HALAMAN BUKU
+   ============================== */
+
+.success-message {
+    margin: 20px 0;
+    padding: 12px 16px;
+
+    border-radius: 10px;
+
+    background: rgba(86, 225, 233, 0.12);
+    border: 1px solid rgba(86, 225, 233, 0.35);
+
+    color: #56E1E9;
+
+    font-size: 14px;
+}
+
+.page-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+    display: inline-block;
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.edit-button {
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #5B58EB,
+        #BB63FF
+    );
+}
+
+.delete-button {
+    border: none;
+
+    color: white;
+
+    background: rgba(220, 70, 100, 0.8);
+}
+
+.edit-button:hover,
+.delete-button:hover {
+    transform: translateY(-2px);
+}
+
+.empty-data {
+    padding: 30px !important;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.6) !important;
+}
